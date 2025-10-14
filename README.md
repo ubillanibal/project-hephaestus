@@ -1,16 +1,94 @@
-# React + Vite
+# UX/UI Designer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+A clean, single-page **React + Vite + TailwindCSS** portfolio site designed to showcase UX/UI design projects, prototypes, and web work. It focuses on clarity, responsiveness, and quick access to project details like live demos, repositories, and Figma files.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## ✨ Features
+- Built with **React + Vite** for speed and simplicity.
+- Styled using **TailwindCSS** for rapid design iteration.
+- Easy to update: all projects are managed in one file (`src/data/projects.js`).
+- Fully responsive layout optimized for desktop and mobile.
+- Smooth scroll navigation between sections (Hero, About, Projects, Contact).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+---
+
+
+## 🧩 Structure
+```
+src/
+components/
+Hero.jsx
+About.jsx
+ProjectCard.jsx
+Projects.jsx
+Contact.jsx
+data/
+projects.js
+App.jsx
+main.jsx
+```
+
+
+---
+
+
+## 🚀 Getting Started
+
+
+1. **Clone the repository:**
+```bash
+git clone https://github.com/YOUR_USERNAME/portfolio.git
+cd portfolio
+```
+
+
+2. **Install dependencies:**
+```bash
+npm install
+```
+
+
+3. **Run locally:**
+```bash
+npm run dev
+```
+
+
+4. **Build for production:**
+```bash
+npm run build
+```
+
+
+5. **Deploy on Cloudflare Pages:**
+- Connect your GitHub repository.
+- Set build command to `npm run build`.
+- Output directory: `dist`.
+
+
+---
+
+
+## 🖼 Adding Projects
+Edit `src/data/projects.js` and add your projects as objects:
+
+
+```js
+export const projects = [
+{
+title: "E-Commerce UI",
+description: "A responsive shopping site prototype built in Figma and React.",
+image: "/images/ecommerce.png",
+tags: ["Figma", "React"],
+links: {
+live: "https://example.com",
+repo: "https://github.com/you/ecommerce",
+figma: "https://figma.com/file/xyz",
+},
+},
+MIT License © YOUR_NAME
