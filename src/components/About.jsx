@@ -8,7 +8,7 @@ export default function About() {
         repeat. I care about usability, real-world feedback, and keeping things
         human.
       </p>
-      <div className="mt-4 flex gap-3">
+{/*       <div className="mt-4 flex gap-3">
         <span className="px-3 py-1 rounded-full bg-white shadow-sm text-sm">
           Figma
         </span>
@@ -18,7 +18,10 @@ export default function About() {
         <span className="px-3 py-1 rounded-full bg-white shadow-sm text-sm">
           Tailwind
         </span>
-      </div>
+        <span className="px-3 py-1 rounded-full bg-white shadow-sm text-sm">
+          MEARN-Stack
+        </span>
+      </div> */}
     </section>
   );
 }
