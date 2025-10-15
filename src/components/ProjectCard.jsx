@@ -1,3 +1,5 @@
+import React from "react";
+
 function LinkButton({ href, children }) {
   if (!href) return null;
   return (
@@ -9,14 +11,29 @@ function LinkButton({ href, children }) {
 
 export default function ProjectCard({ p }) {
   // Destructure the project for clearer code below
-  const { title, description, tags = [], links = {} } = p ?? {};
+  const { title, description, tags = [], links = {}, image } = p ?? {};
   const { live: liveLink, repo: repoLink, figma: figmaLink } = links;
+
+  // Accept image as string or array. Normalize paths and keep them as an array.
+  const rawImages = Array.isArray(image) ? image : image ? [image] : [];
+  const images = rawImages.map((src) => (src ? src.replace(/^\/public/, "") : src));
+
+  // Use only the first image (do not render a thumbnail strip)
+  const imgSrc = images[0] ?? null;
 
   return (
     <article className="card p-4">
       <div className="img-placeholder">
-        {/* Replace with <img src={image} alt={title} /> */}
-        <span>{title} — screenshot</span>
+        {imgSrc ? (
+          <div>
+            <img src={imgSrc} alt={title} className="w-full h-40 object-cover rounded" />
+
+            {/* No thumbnail strip — single image only */}
+          </div>
+        ) : (
+          // Replace with <img src={image} alt={title} />
+          <span>{title} — screenshot</span>
+        )}
       </div>
       <div className="p-4">
         <h3 className="font-semibold text-lg">{title}</h3>
